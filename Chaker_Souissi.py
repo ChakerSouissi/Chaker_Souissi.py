@@ -42,3 +42,73 @@ plt.text(
 
 
 plt.show()
+
+## Graph 2: ESG Score vs Return
+# documentation : 
+# - https://stackoverflow.com/questions/62995987/seaborn-how-to-draw-a-vertical-line-that-matches-a-specific-y-value-in-a-cumula
+# - https://seaborn.pydata.org/generated/seaborn.regplot.html
+plt.figure(figsize=(14, 8))
+sns.regplot(
+    data=stocks_df,
+    x='ESG Score',
+    y='1 Year Total Return - Previous',
+    ci=99, 
+    marker='x', 
+    color='black', 
+    line_kws=dict(color='red'),
+)
+
+plt.title('ESG Score vs. 1 Year Total Return', fontsize=18)
+plt.xlabel('ESG Score', fontsize=12)
+plt.ylabel('1 Year Total Return (%)', fontsize=12)
+plt.show()
+
+## Graph 2: Risk vs Return
+#documentation : https://seaborn.pydata.org/generated/seaborn.scatterplot.html
+
+plt.style.use('seaborn-v0_8-whitegrid')
+fig, ax = plt.subplots(figsize=(14, 9))
+
+# Scatter plot for all stocks
+sns.scatterplot(
+    data=stocks_df,
+    x='Volatility 360 Day Calc',
+    y='1 Year Total Return - Previous',
+    hue='Sector (1)',
+    s=200, # size of points
+    alpha=1,
+
+)
+
+# Plot the SX5E Index as a larger, distinct marker
+ax.scatter(
+    index_data['Volatility 360 Day Calc'],
+    index_data['1 Year Total Return - Previous'],
+    color='red',
+    marker='*',
+    s=300,
+    label='SX5E Index (Benchmark)',
+    zorder=5 # ensure it's on top
+)
+
+# Annotate each point with its ticker ( here I was helped by an AI )
+for i, row in stocks_df.iterrows():
+    ax.text(row['Volatility 360 Day Calc'] + 0.9, row['1 Year Total Return - Previous'], row['Ticker'], fontsize=9)
+ax.text(index_data['Volatility 360 Day Calc'].iloc[0] + 0.3, index_data['1 Year Total Return - Previous'].iloc[0], 'SX5E Index', fontsize=10, color='red')
+
+
+# Adding horizontal and vertical lines for average risk and return
+avg_vol = stocks_df['Volatility 360 Day Calc'].mean()
+avg_ret = stocks_df['1 Year Total Return - Previous'].mean()
+ax.axvline(avg_vol, color='grey', linestyle='--', lw=1, label=f'Avg Volatility ({avg_vol:.2f})')
+ax.axhline(avg_ret, color='grey', linestyle='--', lw=1, label=f'Avg Return ({avg_ret:.2f})')
+
+ax.set_title('Risk (Volatility) vs. Return by Sector', fontsize=18)
+ax.set_xlabel('Volatility 360 Day Calc (%)', fontsize=12)
+ax.set_ylabel('1 Year Total Return (%)', fontsize=12)
+ax.legend(title='Sector', bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.tight_layout()
+plt.show()
+
+
+
