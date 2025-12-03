@@ -63,7 +63,7 @@ plt.xlabel('ESG Score', fontsize=12)
 plt.ylabel('1 Year Total Return (%)', fontsize=12)
 plt.show()
 
-## Graph 2: Risk vs Return
+## Graph 3: Risk vs Return
 #documentation : https://seaborn.pydata.org/generated/seaborn.scatterplot.html
 
 plt.style.use('seaborn-v0_8-whitegrid')
@@ -109,6 +109,7 @@ ax.set_ylabel('1 Year Total Return (%)', fontsize=12)
 ax.legend(title='Sector', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
 plt.show()
+
 
 
 
