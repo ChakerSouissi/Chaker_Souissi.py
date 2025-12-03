@@ -13,7 +13,7 @@ df.rename(columns={'__EMPTY': 'Ticker'}, inplace=True)
 # Replacing all elements containing N/A formulations with the empty value in python which is the None value
 df.replace(['#N/A Field Not Applicable', '#N/A N/A', '#N/A'], None)
 
-# Convert relevant columns to numeric, coercing errors to NaN
+# Convert relevant columns to numeric
 numeric_cols = [
     '1 Year Total Return - Previous', 'Volatility 360 Day Calc', 'BEst P/E Ratio',
     'BEst LTG EPS', 'Upside with Target Price from Analyst', 'ESG Score'
@@ -109,6 +109,7 @@ ax.set_ylabel('1 Year Total Return (%)', fontsize=12)
 ax.legend(title='Sector', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.tight_layout()
 plt.show()
+
 
 
 
