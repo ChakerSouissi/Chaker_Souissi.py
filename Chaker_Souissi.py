@@ -28,7 +28,7 @@ stocks_df = df[df['Ticker'] != 'SX5E Index'].copy()
 ##Graph 1: Analyst Upside  vs Best P/E Ratio
 #documentation : https://seaborn.pydata.org/generated/seaborn.lmplot.html
 sns.lmplot(
-    data=plot_df,
+    data=stocks_df,
     x='BEst P/E Ratio',
     y='Upside with Target Price from Analyst',
     height=8,
