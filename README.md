@@ -7,6 +7,8 @@ Three quantitative finance projects in Python. Below is the output obtained by r
 This script prints nothing to the console: its output is three charts.
 
 - **Graph 1 — Analyst upside vs. BEst P/E ratio:** a regression with a negative slope. The higher the P/E, the lower the upside expected by analysts.
+  <img width="1389" height="787" alt="image" src="https://github.com/user-attachments/assets/5959e9c3-7c7d-40e2-9f40-e0a4833793d4" />
+
 - **Graph 2 — ESG score vs. 1-year total return:** a regression with a 99% confidence interval.
 - **Graph 3 — Risk (360-day volatility) vs. 1-year return by sector:** the SX5E Index is the benchmark (red star), with average-volatility and average-return lines.
 
