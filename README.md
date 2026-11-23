@@ -4,15 +4,22 @@ Three quantitative finance projects in Python. Below is the output obtained by r
 
 ## 1. [`Chaker_Souissi.py`](Chaker_Souissi.py) — Euro Stoxx 50 analysis
 
-This script prints nothing to the console: its output is three charts.
-
 - **Graph 1 — Analyst upside vs. BEst P/E ratio:** a regression with a negative slope. The higher the P/E, the lower the upside expected by analysts.
   <img width="1389" height="787" alt="image" src="https://github.com/user-attachments/assets/5959e9c3-7c7d-40e2-9f40-e0a4833793d4" />
 
 - **Graph 2 — ESG score vs. 1-year total return:** a regression with a 99% confidence interval.
+  <img width="1383" height="766" alt="image" src="https://github.com/user-attachments/assets/7d9b7812-b0a4-4699-a916-fc5091f1a0c3" />
+
 - **Graph 3 — Risk (360-day volatility) vs. 1-year return by sector:** the SX5E Index is the benchmark (red star), with average-volatility and average-return lines.
+  <img width="1384" height="826" alt="image" src="https://github.com/user-attachments/assets/8a4dcaed-4b74-49dc-9749-cc1b9a7996b5" />
+  
+
 
 ## 2. [`Dynamic Portfolio Allocation.py`](Dynamic%20Portfolio%20Allocation.py)
+This is the excel file i managed to create through my python code 
+[dates de rebalencement.xlsx](https://github.com/user-attachments/files/35296577/dates.de.rebalencement.xlsx)
+
+
 
 ```
 Nombre de réallocations : 10
@@ -44,8 +51,13 @@ sxqp index                                                                    20
 IXN US Equity                                20         20         20                    20                               20           
 WELD GY Equity                    20                    20                                                                           20
 ```
+<img width="1221" height="607" alt="image" src="https://github.com/user-attachments/assets/4bd0a040-2767-41fb-bedf-d8dae70ba55a" />
 
 ## 3. [`Equity Research & Quantitative Stock Screening.py`](Equity%20Research%20%26%20Quantitative%20Stock%20Screening.py)
+
+<img width="1591" height="495" alt="image" src="https://github.com/user-attachments/assets/b6257f95-b08e-4cab-9f12-d76aa1d22f76" />
+
+
 
 ```
 Corrélation entre Rule of 40 et Score GARP : 0.88
@@ -77,3 +89,4 @@ P/E Nxt Yr Médian                                                    18.90     
 PEG Médian                                                            0.69                             1.25
 Upside Moyen (%)                                                     47.88                            32.04
 ```
+<img width="991" height="498" alt="image" src="https://github.com/user-attachments/assets/13a251a4-1be4-4736-925e-c9814ba3646b" />
